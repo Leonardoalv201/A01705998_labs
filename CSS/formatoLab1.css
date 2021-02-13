@@ -1,0 +1,47 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: "Roboto","Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: #555;
+    background: rgb(188, 198, 216);
+}
+
+header {
+    background-color: #263d36;
+    background-image: url("header.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 1.2;
+    padding: 5vw 2em;
+    text-align: center;
+}
+
+header h3{
+    color:rgb(189, 189, 189)
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+strong{
+    color:rgb(34, 34, 34)
+}
+
+#titulo_secundario{
+    color:rgb(0, 68, 255);
+}
+
+#titulo_tercero{
+    color:rgb(37, 37, 37)
+}
+
+a {
+    color: #156488;
+}
+
