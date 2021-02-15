@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 4</title>
+    <link rel="stylesheet" href="css/formatoLab1.css">
+</head>
+<body>
+    <header>
+        <h1>Laboratorio 4</h1>
+        <h3>Nombre: Leonardo Alvarado Menendez</h3>       
+        <h3>Matricula: A01705998</h3>       
+    </header>
+    <main>
+        <script src="js/Lab4.js"></script>
+        <div id="button">
+            <button onclick="problema_3()">Problema 3</button>
+        </div>
+        <div id="T_Prob3"></div>
+        <div id="Res_Prob3"></div>
+
+        <div id="button">
+            <button onclick="problema_4()">Problema 4</button>
+        </div>
+
+        <div id="button">
+            <button onclick="problema_5()">Problema 5</button>
+        </div>
+        <div id="T_Prob5"></div>
+        <div id="Res_Prob5"></div>
+        <ol>
+            <li>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</li>
+            Javascript se ejecuta sobre un navegador web, a diferencia de java, el cual es un lenguaje de programacion<br><br>
+
+            <li>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</li>
+            <ul>
+                <li><strong>date.now()</strong>=Devuelve la hora actual</li>
+                <li><strong>date.parse()</strong>=Transforma una cadena que representa una fecha, y devuelve el número de milisegundos desde el 1 de enero de 1970, hora local 00:00:00</li>
+                <li><strong>date.utc()</strong>=Acepta los mismos parámetros que la forma más larga del constructor, y devuelve el número de milisegundos en un objeto Date desde el 1 de enero de 1970, hora universal 00:00:00</li>
+                <li><strong>gettime()</strong>=Devuelve el tiempo especifico</li>
+                <li><strong>getmonth()</strong>=Devuelve el mes</li>
+            </ul>
+
+            <li>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</li>
+            <ul>
+                <li><strong>forEach():</strong> Recorrer el arreglo</li>
+                <li><strong>push():</strong> Agregar elemento</li>
+                <li><strong>pop():</strong> Borrar elemento</li>
+                <li><strong>unshift():</strong> Añadir un elemento al principio de un Array</li>
+                <li><strong>shift():</strong> Eliminar el primer elemento de un Array</li>
+            </ul>
+
+            <li>¿Cómo se declara una variable con alcance local dentro de una función?</li>
+            Con let, la caracteristica especial de esta es que es de corto alcance, una ves sales de la funcion donde se declara, esta ya no existe <br><br>
+
+            <li>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</li>
+            Esto implica que estas variables seguiran existiendo afuera de la funcion, a diferencia de un let, el cual desaparece cuando este finaliza <br><br>
+        </ol>
+    </main>
+    <footer>
+        <h3>Bibliografia</h3>
+        <ul>
+            <li>
+                <span>DN contributors. (2019). Date. Febrero 14, 2021, de MDN web Docs Sitio web:</span>
+                <span><a href=" https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date" target="_blank"> https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date</a></span>
+            </li>
+            <li>
+                <span>MDN contributors. (2020). Array. Febrero 14, 2021, de MDN web Docs Sitio web:</span>
+                <span><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array" target="_blank"> https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array</a></span>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
