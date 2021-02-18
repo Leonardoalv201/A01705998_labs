@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 5</title>
+    <link rel="stylesheet" href="css/formatoLab5.css">
+</head>
+<body>
+    <header>
+        <h1>Laboratorio 5</h1>
+        <h3>Nombre: Leonardo Alvarado Menendez</h3>       
+        <h3>Matricula: A01705998</h3>       
+    </header>
+    <main>
+        <section>
+            <h3 id="titulo_secundario">Contraseña</h3>
+            <div>
+                <input id="p" type="password"> Insertar contraseña <br>
+            </div>
+            <div>
+                <input id="password_conf" type="password"> Confirmar contraseña<br><br>
+            </div>
+            <button id="contrasena" class="button" onclick="confirmar_contrasena()">Confirmar contraseña</button> <br>
+            <div id="mensaje"></div>
+        </section>
+        <section>
+            <h3 id="titulo_secundario">Venta</h3>
+            <img alt="funko_1" src="https://ss610.liverpool.com.mx/xl/1091568485.jpg" width="150" height="150"> 
+            <input id="funko1" type="number" min="0" max="5"> Insertar cantidad a comprar <br>
+            300 pesos (En existencia 5) <br>
+            <img alt="funko_1" src="https://cdn1.coppel.com/images/catalog/pr/7244132-1.jpg" width="150" height="150"> 
+            <input id="funko2" type="number" min="0" max="5"> Insertar cantidad a comprar <br>
+            350 pesos (En existencia 5)<br>
+            <img alt="funko_1" src="https://target.scene7.com/is/image/Target/GUEST_66b2a8cf-02bf-42fa-8b8c-2248d608d415?wid=488&hei=488&fmt=pjpeg" width="150" height="150"> 
+            <input id="funko3" type="number" min="0" max="5"> Insertar cantidad a comprar <br>
+            250 pesos (En existencia 5)<br><br>
+            <button id="compra" class="button" onclick="confirmar_compra()">Confirmar compra</button> <br>
+            <span><strong>Tu compra sin IVA es: </strong></span>
+            <span><div id="mensaje_precio"></div></span>
+            <span><strong>IVA acumulado (x1.16): </strong></span>
+            <span><div id="mensaje_iva"></div></span>
+            <span><strong>El total de tu compra fue: </strong></span>
+            <span><div id="mensaje_compra"></div></span>
+        </section>
+        <Section>
+            <h3 id="titulo_secundario">Cuestionario</h3>
+            <ol>
+                <li>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</li>
+                    Para asi tener un mejor control en lo que se esta enviando, evitando asi que se envie informacion basura o que este mal<br><br>
+                <li>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</li>
+                    Desavilitando javascript, una vez hecho esto se eliminan estas validaciones<br><br>
+                <li>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</li>
+                    Aunque sea posible, es poco probable que ocurra, mas aparte es una buena practica, y con esto se mejora la calidad del programa<br><br>
+            </ol>
+        </Section>
+    </main>
+    <script src="js/Lab5.js"></script>
+</body>
+</html>
