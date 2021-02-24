@@ -44,10 +44,3 @@ const server=http.createServer((request, response) => {
 
 
 server.listen(3000);
-//let numero_promedios = prompt("De cuantos numeros quieres obtener el promedio?","Inserta el numero aqui")
-    //for(let i=0;i<numero_promedios;i++){
-       //let f=i+1;
-        //proms[i]=prompt("Inserta el " + f + "° dato")
-    //}
-    //console.log("hola");
-    //response.end();

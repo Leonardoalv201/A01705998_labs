@@ -5,6 +5,9 @@ const server=http.createServer((request, response) => {
         response.write("<html>");
         response.write('<head><meta charset="UTF-8"><title>Inicio</title></head>');
         response.write("<body><header><h1>Nombre: Leonardo Alvarado Menendez</h1><h3>Matricula: A01705998</h3><h3>Correo: A01705998@itesm.mx</h3><hr></header>");
+        response.write('<main><div id="button"><button onclick="problema_3()">Ir a guardar texto</button></div></form>');
+        response.write('<div id="button"><button onclick="problema_3()">Ir a guardar texto</button></div></form>');
+        response.write("</main>");
         response.write("</html>");
         response.end();
     }else if(request.url==="/============"){
@@ -24,9 +27,17 @@ const server=http.createServer((request, response) => {
         return request.on('end', ()=>{
             const texto_completo=Buffer.concat(texto).toString();
             var nuevo_texto =texto_completo.split('=')[1];
-            //var nuevo_texto =nuevo_texto.split('+')[1];
+            var txt=[];
+            for (let i=0;i<nuevo_texto.length;i++){
+                if(nuevo_texto[i]==="+"){
+                    txt.push(" ");
+                }else{
+                    txt.push(nuevo_texto[i]);
+                }
+            }
+            txt=txt.toString();
             let filesystem = require('fs');
-            filesystem.writeFileSync('mensaje.txt',nuevo_texto)
+            filesystem.writeFileSync('mensaje.txt',txt)
             return response.end();
         })
         
