@@ -1,6 +1,9 @@
-const http = require('http');
 var bandera=0;
-const server=http.createServer((request, response) => {
+
+const requestHandler = (request, response) => {
+
+    
+
     if(request.url==="/"){
         response.setHeader('Content-Tyoe','text/html');
         response.write("<html>");
@@ -67,6 +70,6 @@ const server=http.createServer((request, response) => {
         response.end();
     }
 
-});
+}
 
-server.listen(3000);
+module.exports = requestHandler;
