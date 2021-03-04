@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs') %>
+
+<main>
+    <h1>Armas</h1>
+    <ul>
+        <% for (let arma of lista_armas) { %>
+            <li> <%= arma %> </li>
+        <% } %>
+    </ul>
+</main>
+
+
+<%- include('partials/footer.ejs') %>

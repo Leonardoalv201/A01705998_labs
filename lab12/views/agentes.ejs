@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs') %>
+
+<main>
+    <h1>Agentes</h1>
+    <ul>
+        <% for (let agente of lista_agentes) { %>
+            <li> <%= agente %> </li>
+        <% } %>
+    </ul>
+</main>
+
+
+<%- include('partials/footer.ejs') %>

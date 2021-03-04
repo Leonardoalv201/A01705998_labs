@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 1</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+</head>
+<body>
+    <header>
+        <h1>Nombre: Leonardo Alvarado Menendez</h1>       
+        <h3>Matricula: A01705998</h3>       
+        <h3>Correo: A01705998@itesm.mx</h3>
+        <hr>
+    </header>
+    <Main>
+        <section>
+            <h3 id="titulo_secundario">Cuestionario Lab1</h3>
+            <ol>
+                <li>¿Cuál es la diferencia entre Internet y la World Wide Web?</li>
+                El internet es una gran coleccion de computadoras, mientras que la World Wide Web es una gran coleccion de paginas web. <br><br>
+            
+                <li>¿Cuáles son las partes de un URL?</li>
+                Se divide en 4:
+                <ul>
+                    <li><strong>Protocol:</strong>  usualmente es http aunque tambien se usan FTP o SMTP</li>
+                    <li><strong>Domain:</strong> este se usa para identificar una o mas direcciones IP</li>
+                    <li><strong>Path:</strong> se especifica en que parte del servidor se encientra el archivo</li>
+                    <li><strong>Parameters:</strong> son datos adicionales para identificar o filtrar los recursos del servidor.</li>
+                </ul>
+                <br>
+
+                <li>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</li>
+                <ul>
+                    <li> <strong>GET:</strong> Este método solicita datos de un recurso específico donde los datos no se modifican de ninguna manera</li>
+                    <li> <strong>HEAD:</strong> Este método se usa de la misma manera que usa GET, pero con la distinción de que la devolución de un método HEAD no debe contener cuerpo en la respuesta.</li>
+                    <li> <strong>POST:</strong> Enviar datos a un servidor de forma mas segura que un get</li>
+                    <li> <strong>PUT:</strong> Para actualizar el recurso existente en un servidor utilizando el contenido del cuerpo de la solicitud.</li>
+                    <li> <strong>PATCH:</strong> Se usa para actualizar un recurso</li>
+                    <li> <strong>DELETE:</strong> Borra un recurso especifico</li>
+                </ul>
+                <br>
+
+                <li>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</li>
+                Post, ya que se esta enviando algo, y se quiere que sea mas seguro. <br><br>
+
+                <li>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</li>
+                Get, con este se envia la busqueda ques e quiere hacer. <br> <br>
+
+                <li>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</li>
+                Significa que la pagina cargo correctamente, por lo que no es un error. <br><br>
+
+                <li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</li>
+                No, el error 404 significa que el usuario quiso acceder a algo que no existe. <br><br>
+
+                <li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</li>
+                Si, el error 500 significa un error interno en el servidor. <br><br>
+
+                <li> ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</li>
+                Los tags y atributos desaprobados son partes del estándar HTML cuyo uso ya no es recomendado. <br>
+                Ejemplos: <br>
+                <ul>
+                    <li> <strong>Applet:</strong> Reemplazado por el tag HTML object.</li>
+                    <li> <strong>Dir:</strong> Reemplazado por el tag HTML ul.</li>
+                    <li> <strong>Isindex:</strong> Reemplazado por el tag HTML input.</li>
+                    <li> <strong>Menu:</strong> Reemplazado por el tag HTML ul.</li>
+                </ul>
+                <br>
+
+                <li>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</li>
+                <ul>
+                    <li>HTML5 permite incluir elementos de SVG y MathML.</li> 
+                    <li>Se introducen nuevos elementos, como: section, article, aside, header, footer, etc.</li> 
+                    <li>Se introducen nuevos atributos, como: media, charset, autofocus, placeholder, etc.</li> 
+                    <li>Algunos elementos cambian, como: a, b, i, menu, etc.</li> 
+                    <li>Algunos atributos cambian, como: type, name, summary, etc.</li> 
+                    <li>Algunos elementos desaparecen, como: basefont, big, center, etc.</li> 
+                    <li>Algunos atributos desaparecen, como: align, background, bgcolor, etc.</li> 
+                    <li>Mejora de las API, como: getElementsByClassName() y innerHTML.</li> 
+                </ul>
+                <br>
+                
+                <li>¿Qué componentes de estructura y estilo tiene una tabla?</li>
+                <ul>
+                    <li><strong>Caption:</strong> Provee un título para la tabla.</li>
+                    <li><strong>Colgrup:</strong> Agrupa columnas temáticamente.</li>
+                    <li><strong>Col:</strong> Aplica atributos comunes y estilos a una o más columnas. Sólo puede ser declarado como hijo de colgroup</li>
+                    <li><strong>Tbody:</strong> Representa a un cuerpo de la tabla.</li>
+                    <li><strong>Thead:</strong> Representa la sección de encabezado de la tabla.</li>
+                    <li><strong>Tfoot:</strong> Representa la sección de pie de la tabla.</li>
+                    <li><strong>Tr:</strong> Representa una fila.</li>
+                    <li><strong>Td:</strong> Representa a una celda regular.</li>
+                    <li><strong>Th:</strong> Representa a una celda de encabezado.</li>
+                </ul>
+                <br>
+
+                <li>¿Cuáles son los principales controles de una forma HTML5?</li>
+                <ul>
+                    <li><strong>Submit</strong> </li>
+                    <li><strong>Text</strong></li>
+                    <li><strong>Date</strong></li>
+                    <li><strong>Number</strong></li>
+                </ul>
+                <br>
+
+                <li>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</li>
+                Mi navegador cuenta con 476 de 555 puntos y uso Chrome. <br><br>
+
+                <h4>Sobre el ciclo de vida y desarrollo de los sistemas de información:</h4>
+
+
+                <li>¿Cuál es el ciclo de vida de los sistemas de información?</li>
+                Es un enfoque por fases del análisis y diseño que sostiene que los sistemas son desarrollados 
+                de mejor manera mediante el uso de un ciclo especifico de actividades del analista y del usuario.
+                Antes de analizar la calidad en el proceso de desarrollo de sistemas es importante explicar el ciclo 
+                de vida de los sistemas de Información. Las fases que incluye son nacimiento, desarrollo, operación, mantenimiento y muerte. <br><br>
+
+                <li>¿Cuál es el ciclo de desarrollo de sistemas de información?</li>
+                Es un proceso logico, empleado en el mundo del Desarrollo de Software sistemas 
+                usados para desarollar un sistema de informacion, incluidos los requisitos, 
+                la validación, formación, como los usuarios en la propiedad. <br><br>
+            </ol>
+        </section>
+        <hr>
+
+        <section>
+            <h3 id="titulo_secundario">Cuestionario Lab3</h3>
+            <ol>
+                <li>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </li>
+                Este puede llegara ser util en casos donde no este bien organizado tu css, pero si logras tener un buen orden y bien marcado la priorizacion, no es necesario, mas aparte que este denota queb esta mal estructurado tu css. <br><br>
+
+                <li>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</li>
+                Hay que tener en cuenta el tamaño de la imagen (sus proporciones) ya que esta se puede llegar a desfigurar segun donde se esta viendo. <br><br>              
+
+                <li>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</li>
+                Recomiendo mas usar %, esto ya que al cambiar de dispositivo se alteraria la esctructura visual si estamos usando px o pt, en cambio con % esta siempre se mantiene. <br><br>
+
+                <li>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</li>
+                Ya que no se corren lineas de codigo que no son del todo necesarias, marcara errores, pero el programa seguira funcionando de igual forma leyendo menos datos, por lo que es mas efectivo. <br><br>
+            </ol>
+         </section>
+         <hr>
+
+    </Main>
+        
+    <footer>
+        <h3 id="titulo_tercero">Bibliografia</h3>
+        <ul>
+            <li>
+                <span>SN. (2019). ¿Cuál es la diferencia entre internet y la web? (y por qué muchos las confunden). Febrero 02, 2021, de BBC News Sitio web:</span>
+                <span><a href="https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,para%20acceder%20a%20la%20web." target="_blank">https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,para%20acceder%20a%20la%20web.</a></span>
+            </li>
+            <li>
+                <span>Goran A. (2019). An introduction to HTTP: everything you need to know. Febrero 08, 2021, de freeCodeCamp Sitio web:</span>
+                <span><a href=" https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/" target="_blank"> https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/</a></span>
+            </li>
+            <li>
+                <span>Escobar N. (2015). 404, ¿qué significan los códigos de error en la web?. Febrero 09, 2021, de hipertextual Sitio web:</span>
+                <span><a href="https://hipertextual.com/2015/10/codigos-de-error-en-la-web" target="_blank">https://hipertextual.com/2015/10/codigos-de-error-en-la-web.</a></span>
+            </li>
+            <li>
+                <span>SN. (SF). 5.Tags y atributos desaprobados en HTML. Febrero 09, 2021, de TODO HTML Sitio web:</span>
+                <span><a href="https://sites.google.com/site/dwebhtml/reference/deprecated" target="_blank">https://sites.google.com/site/dwebhtml/reference/deprecated.</a></span>
+            </li>
+            <li>
+                <span>Lujan S. (2011). Programación en Internet. Febrero 09, 2021, de blogs.ua Sitio web:</span>
+                <span><a href="https://blogs.ua.es/pi/2011/01/17/%C2%BFcuales-son-las-diferencias-entre-html4-xhtml-1-0-y-html5/#:~:text=Algunas%20de%20las%20principales%20diferencias,%2F%3E%20(XHTML%201.0).&text=HTML5%20permite%20incluir%20elementos%20de%20SVG%20y%20MathML." target="_blank">https://blogs.ua.es/pi/2011/01/17/%C2%BFcuales-son-las-diferencias-entre-html4-xhtml-1-0-y-html5/#:~:text=Algunas%20de%20las%20principales%20diferencias,%2F%3E%20(XHTML%201.0).&text=HTML5%20permite%20incluir%20elementos%20de%20SVG%20y%20MathML..</a></span>
+            </li>
+            <li>
+                <span>SN. (SF). ELEMENTO TABLE. Febrero 09, 2021, de htmlquick Sitio web:</span>
+                <span><a href="https://www.htmlquick.com/es/reference/tags/table.html" target="_blank">https://www.htmlquick.com/es/reference/tags/table.html.</a></span>
+            </li>
+            <li>
+                <span>Naranjo M. (2018). Ciclo de vida de un sistema de informacion. Febrero 09, 2021, de slideshare Sitio web:</span>
+                <span><a href="https://es.slideshare.net/MonicaNaranjo20/ciclo-de-vida-de-un-sistema-de-informacion-93192099#:~:text=Ciclo%20de%20vida%20de%20un%20sistema%20%EF%82%A7%20El%20ciclo%20de,del%20analista%20y%20del%20usuario." target="_blank">https://es.slideshare.net/MonicaNaranjo20/ciclo-de-vida-de-un-sistema-de-informacion-93192099#:~:text=Ciclo%20de%20vida%20de%20un%20sistema%20%EF%82%A7%20El%20ciclo%20de,del%20analista%20y%20del%20usuario..</a></span>
+            </li>
+            <li>
+                <span>SN. (SF). Systems Development Life Cycle. Febrero 09, 2021, de Wikipedia Sitio web:</span>
+                <span><a href="https://es.wikipedia.org/wiki/Systems_Development_Life_Cycle#:~:text=El%20ciclo%20de%20vida%20de,(interesados)%20en%20la%20propiedad." target="_blank">https://es.wikipedia.org/wiki/Systems_Development_Life_Cycle#:~:text=El%20ciclo%20de%20vida%20de,(interesados)%20en%20la%20propiedad.</a></span>
+            </li>
+        </ul>
+        <h4 id="titulo_tercero">Editor de HTML</h4>
+        <h4><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></h4>
+    </footer>
+</body>
+</html>
