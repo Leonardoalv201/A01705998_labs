@@ -10,6 +10,8 @@ app.set('views', 'views');
 
 const rutasAgentes = require('./routes/agentes');
 const rutasArmas = require('./routes/armas');
+const rutasInicio = require('./routes/inicio');
+const rutaslab3 = require('./routes/lab1');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -20,13 +22,9 @@ app.use('/agentes', rutasAgentes);
 
 app.use('/armas', rutasArmas);
 
-app.get('/', (request, response, next) => {
-    response.sendFile(path.join(__dirname, 'views', 'inicio.html'));
-});
+app.use('/lab-1', rutaslab3);
 
-app.get('/lab-3', (request, response, next) => {
-    response.sendFile(path.join(__dirname, 'views', 'Lab1.html'));
-});
+app.use('/', rutasInicio);
 
 app.use((request, response, next) => {
     response.statusCode = 404;
