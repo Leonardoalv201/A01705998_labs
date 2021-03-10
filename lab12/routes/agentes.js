@@ -7,8 +7,9 @@ const path = require('path');
 const agentes=["Sova", "Reyna"];
 
 router.get('/nuevo-agente',(request,response,next)=>{
-    response.send('<h1>Guarda el agente</h1><hr><form action="nuevo-agente" method="POST"><input type="text" name="guardar_agente"><input type="submit" value="Guardar agente"></form>');
-
+    response.render('nuevo-agente', {
+        Titulo:"Nuevo agente"
+    });
 });
 
 router.post('/nuevo-agente',(request,response,next)=>{
