@@ -4,25 +4,12 @@ const router = express.Router();
 
 const path = require('path');
 
-const agentes=["Sova", "Reyna"];
+const agentesController = require('../controllers/agentes_controller');
 
-router.get('/nuevo-agente',(request,response,next)=>{
-    response.render('nuevo-agente', {
-        Titulo:"Nuevo agente"
-    });
-});
+router.get('/nuevo-agente',agentesController.getNuevoAgente);
 
-router.post('/nuevo-agente',(request,response,next)=>{
-    agentes.push(request.body.guardar_agente);
-    response.redirect('/agentes');
-});
+router.post('/nuevo-agente',agentesController.postNuevoAgente);
 
-router.use('/',(request,response,next)=>{
-    response.render('agentes', {
-        lista_agentes: agentes,
-        Titulo:"Agentes"
-    });
-});
-
+router.get('/',agentesController.get);
 
 module.exports = router;

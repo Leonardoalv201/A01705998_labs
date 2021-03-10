@@ -4,25 +4,13 @@ const router = express.Router();
 
 const path = require('path');
 
-const armas=["Operator", "Vandal"];
+const armasController = require('../controllers/armas_controller');
 
-router.get('/nuevo-arma',(request,response,next)=>{
-    response.render('nuevo-arma', {
-        Titulo:"Nueva arma"
-    });
-});
+router.get('/nuevo-arma', armasController.getNuevoArma);
 
-router.post('/nuevo-arma',(request,response,next)=>{
-    armas.push(request.body.guardar_arma);
-    response.redirect('/armas');
-});
+router.post('/nuevo-arma',armasController.postNuevoArma);
 
-router.use('/',(request,response,next)=>{
-    response.render('armas', {
-        lista_armas: armas,
-        Titulo:"Armas"
-    });
-});
+router.use('/',armasController.get);
 
 
 module.exports = router;

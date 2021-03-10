@@ -4,8 +4,8 @@ const router = express.Router();
 
 const path = require('path');
 
-router.use('/',(request,response,next)=>{
-    response.render('lab1',{Titulo:"Lab 3"});
-});
+const lab1Controller = require('../controllers/lab1_controller');
+
+router.use('/',lab1Controller.use);
 
 module.exports = router;

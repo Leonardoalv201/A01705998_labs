@@ -4,8 +4,8 @@ const router = express.Router();
 
 const path = require('path');
 
-router.use('/',(request,response,next)=>{
-    response.render('inicio',{Titulo:"Inicio"});
-});
+const inicioController = require('../controllers/inicio_controller');
+
+router.use('/',inicioController.use);
 
 module.exports = router;
