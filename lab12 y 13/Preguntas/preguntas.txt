@@ -1,0 +1,5 @@
+¿Qué beneficios encuentras en el estilo MVC?
+    Con este modelo es mas facil el atrera tus datos, ya que teniendo tanto models como controllers, es mas especifico que se hace en cada documento, y no tenemos uno haciendo mas de una cosa
+
+¿Encuentras alguna desventaja en el estilo arquitectónico MVC?
+    Lo que a mi se me llega a complicar pero considero que es porque es la primer avez que trabajo en algo como esto es el tener muchos archivos, siento que es facil de perderte si no estas acostrumbrado
