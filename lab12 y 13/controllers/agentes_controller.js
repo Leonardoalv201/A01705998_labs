@@ -7,7 +7,7 @@ exports.getNuevoAgente = (request,response,next)=>{
 }
 
 exports.postNuevoAgente = (request,response,next)=>{
-    const nuevo_agente=new Agente(request.body.guardar_agente)
+    const nuevo_agente=new Agente(request.body.guardar_agente, request.body.imagen_agente)
     nuevo_agente.save();
     response.redirect('/agentes');
 }

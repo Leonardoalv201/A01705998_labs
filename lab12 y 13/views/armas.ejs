@@ -3,11 +3,14 @@
 
 <main>
     <h1>Armas</h1>
-    <ul>
-        <% for (let arma of lista_armas) { %>
-            <li> <%= arma %> </li>
-        <% } %>
-    </ul>
+    <% for (let arma of lista_armas) { %>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="<%= arma.imagen %>"" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text"><%= arma.arma %></p>
+            </div>
+        </div>
+    <% } %>
 </main>
 
 

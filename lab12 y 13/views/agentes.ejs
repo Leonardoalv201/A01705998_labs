@@ -3,10 +3,13 @@
 
 <main>
     <h1>Agentes</h1>
-    <ul>
-        <% for (let agente of lista_agentes) { %>
-            <li> <%= agente %> </li>
-        <% } %>
-    </ul>
+    <% for (let agente of lista_agentes) { %>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="<%= agente.imagen %>"" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text"><%= agente.agente %></p>
+            </div>
+        </div>
+    <% } %>
 </main>
 
