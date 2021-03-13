@@ -1,9 +1,15 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/navbar.ejs') %>
-<h1>Guarda el arma</h1>
 
 <form action="nuevo-arma" method="POST">
-    <input type="text" name="guardar_arma" placeholder="Nombre arma"> <br> <br>
-    <input type="text" name="imagen_arma" placeholder="link imagen"> <br> <br>
-    <input type="submit" value="Guardar arma">
+    <div class="card">
+        <div class="card-header">
+            Guarda el arma
+        </div>
+        <div class="card-body">
+            <input type="text" name="guardar_arma" placeholder="Nombre arma"> <br> <br>
+            <input type="text" name="imagen_arma" placeholder="link imagen"> <br> <br>
+            <input type="submit" value="Guardar arma">
+        </div>
+    </div>
 </form>
