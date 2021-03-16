@@ -484,47 +484,107 @@ group by clave
 
 
 /*La Clave del material más vendido durante el 2001. (se recomienda usar una vista intermedia para su solución)*/
-select m.clave, t.total_entregado
+select r.clave, r.total
+from (select clave, sum(cantidad) as total
+from entregan as e 
+where fecha between '20010101' and ' 20020101'
+group by clave) as r, 
+(select  max(t.total_entregado) as can
 from materiales as m,
 (select clave, sum(cantidad) as total_entregado
 from entregan as e 
 where fecha between '20010101' and ' 20020101'
 group by clave) as t
-where m.clave=t.clave
-group by m.clave
-having t.total_entregado=max(t.total_entregado)
+where m.clave=t.clave) as d
+where d.can=r.total
+/*1020	1060.00
+1 row*/
 
-
-
-select m.clave 
-from materiales as m 
-select max(t.total_entregado)
-from (select clave, max(sum(cantidad)) as total_entregado
-from entregan as e 
-where fecha between '20010101' and ' 20020101'
-group by clave
-having sum(cantidad)=max(total_entregado)) as t
-having t.total_entregado=max(t.total_entregado)
 
 /*Productos que contienen el patrón 'ub' en su nombre.*/
-select * from proveedores
-select * from materiales
-select * from entregan
-select * from proyectos
+select *
+from materiales
+where Descripcion like '%ub%'
+/*
+1180	Recubrimiento P1001	200.00	2.36
+1190	Recubrimiento P1010	220.00	2.38
+1200	Recubrimiento P1019	240.00	2.40
+1210	Recubrimiento P1028	250.00	2.42
+12 rows*/
+
 
 /*Denominación y suma del total a pagar para todos los proyectos.*/
+select numero, sum(cantidad) total_a_pagar
+from entregan
+group by Numero
+/*
+5000	724.00
+5001	1172.00
+5002	1209.00
+5003	1308.00
+20 rows*/
 
 
 /*Denominación, RFC y RazonSocial de los proveedores que se suministran materiales al proyecto Televisa en acción que no se encuentran apoyando al proyecto Educando en Coahuila (Solo usando vistas).*/
+select p.rfc, p.razonsocial, pr.Denominacion
+from Proveedores as p, entregan as e, Proyectos as pr,
+((select p.rfc
+from Proveedores as p, entregan as e, Proyectos as pr
+where e.Numero=pr.Numero and p.rfc=e.rfc
+and pr.Denominacion like 'Televisa en acción') 
+except
+(select p.rfc
+from Proveedores as p, entregan as e, Proyectos as pr
+where e.Numero=pr.Numero and p.rfc=e.rfc
+and pr.Denominacion like 'Educando en Coahuila')) as tabla
+where tabla.rfc=p.rfc and pr.Denominacion like 'Televisa en acción'
+group by p.RazonSocial , p.rfc , pr.Denominacion
+/*
+CCCC800101   	La Ferre	Televisa en acción
+DDDD800101   	Cecoferre	Televisa en acción
+2 rows*/
 
 
 /*Denominación, RFC y RazonSocial de los proveedores que se suministran materiales al proyecto Televisa en acción que no se encuentran apoyando al proyecto Educando en Coahuila (Sin usar vistas, utiliza not in, in o exists).*/
+select p.rfc, p.razonsocial, pr.Denominacion
+from Proveedores as p, entregan as e, Proyectos as pr
+where e.Numero=pr.Numero and p.rfc=e.rfc
+and pr.Denominacion like 'Televisa en acción'
+and p.rfc not in
+(select p.rfc
+from Proveedores as p, entregan as e, Proyectos as pr
+where e.Numero=pr.Numero and p.rfc=e.rfc
+and pr.Denominacion like 'Educando en Coahuila')
+group by p.RazonSocial , p.rfc , pr.Denominacion
+/*
+CCCC800101   	La Ferre	Televisa en acción
+DDDD800101   	Cecoferre	Televisa en acción
+2 rows*/
 
 
 /*Costo de los materiales y los Materiales que son entregados al proyecto Televisa en acción cuyos proveedores también suministran materiales al proyecto Educando en Coahuila.*/
-
-
-/*Reto: Usa solo el operador NOT IN en la consulta anterior (No es parte de la entrega).*/
+select m.descripcion, sum(cantidad*(costo+(costo*(porcentajeimpuesto/100)))) 
+from entregan as e, materiales as m, Proyectos as p
+where e.clave=m.clave and p.Numero=e.numero and 
+p.Denominacion like 'Educando en Coahuila' or p.Denominacion like 'Televisa en acción'
+group by m.descripcion
+/*
+Arena	9922933.4400000000
+Block	1479712.9200000000
+Cantera amarilla	11360006.0840000000
+Cantera blanca	9872474.7200000000
+42 rows*/
 
 
 /*Nombre del material, cantidad de veces entregados y total del costo de dichas entregas por material de todos los proyectos.*/
+select m.descripcion, count(m.clave) as veces_entregado, sum(cantidad*(costo+(costo*(porcentajeimpuesto/100)))) as importe
+from entregan, materiales as m
+where entregan.clave=m.clave
+group by m.descripcion
+/*
+Arena	3	218692.3200000000
+Block	3	51754.0800000000
+Cantera amarilla	3	176536.5000000000
+Cantera blanca	3	297225.6800000000
+42 rows*/
+
