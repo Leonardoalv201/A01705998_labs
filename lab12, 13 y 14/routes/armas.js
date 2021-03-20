@@ -10,6 +10,8 @@ router.get('/nuevo-arma', armasController.getNuevoArma);
 
 router.post('/nuevo-arma',armasController.postNuevoArma);
 
+router.get('/:arma_id', armasController.getArma);
+
 router.use('/',armasController.get);
 
 

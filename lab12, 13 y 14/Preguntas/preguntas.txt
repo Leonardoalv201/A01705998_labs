@@ -5,3 +5,13 @@
 ¿Encuentras alguna desventaja en el estilo arquitectónico MVC?
     Lo que a mi se me llega a complicar pero considero que es porque es la primer avez que trabajo en algo como esto es el tener muchos archivos, 
     siento que es facil de perderte si no estas acostrumbrado
+
+
+Preguntas lab 17
+¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?
+    De esta forma es mas sencillo saber donde hay que trabajar cada aspecto, aparte que asi tenemos mayor control sobre lo que pasa en cada capa, 
+    ya que si tuvieramos sql en varias seria complicado seguir una instruccion, entender de donde ir a donde y esto dificulta el trabajo
+
+¿Qué es SQL injection y cómo se puede prevenir?
+    Este tipo de ataque ocurren cuando un usuario al registrar un dato, inserta codigo sql para afectar la base de datos, esto se previene utilizando '?' en donde van las variables y 
+    despues se le pasa el dato, de esta forma, no toma lo mandado literal como codigo sql, sino mas bien como texto 

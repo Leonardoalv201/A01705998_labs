@@ -10,6 +10,8 @@ router.get('/nuevo-agente',agentesController.getNuevoAgente);
 
 router.post('/nuevo-agente',agentesController.postNuevoAgente);
 
+router.get('/:agente_id', agentesController.getAgente);
+
 router.get('/',agentesController.get);
 
 module.exports = router;
