@@ -69,6 +69,4 @@ exports.getAgente= (request,response,next)=>{
         .catch(err => {
             console.log(err);
         });
-
-    
 }

@@ -2,17 +2,15 @@
 <%- include('partials/navbar.ejs') %>
 
 <main class="row align-items-center">
-    <form action="/users/login" method="POST">
+    <form action="/users/register" method="POST">
         <div class="card text-center" >
             <div class="card-header">
                 Registro de usuario
             </div>
             <div class="card-body">
-                <% if (error) {%>
-                    <span style="color: red;"><%=error%></span><br>
-                <% }%>
-                <input type="text" name="usuario" placeholder="Username"> <br> <br>
-                <input type="password" name="password" placeholder="Contraseña"> <br> <br>
+                <input type="text" name="nombre" placeholder="Nombre usuario" required> <br> <br>
+                <input type="text" name="username" placeholder="Username" required> <br> <br>
+                <input type="password" name="password" placeholder="Contraseña" required> <br> <br>
                 <input type="submit" value="Ingresar">
             </div>
         </div>
