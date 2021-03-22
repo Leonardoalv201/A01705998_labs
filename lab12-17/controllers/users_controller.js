@@ -5,6 +5,7 @@ exports.getLogin = (request, response, next)=>{
         response.render('login',{
             Titulo: "Login",
             error: request.session.error,
+            csrfToken: request.csrfToken(),
             isLoggedIn: request.session.isLoggedIn == true ? true : false
         });
     }

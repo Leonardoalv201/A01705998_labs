@@ -1,8 +1,10 @@
 const Agente = require('../models/agente');
 
 exports.getNuevoAgente = (request,response,next)=>{
+    
     response.render('nuevo-agente', {
         Titulo:"Nuevo agente",
+        csrfToken: request.csrfToken(),
         isLoggedIn: request.session.isLoggedIn == true ? true : false
     });
 }

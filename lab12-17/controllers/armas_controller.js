@@ -1,8 +1,10 @@
 const Arma = require('../models/arma');
 
 exports.getNuevoArma = (request,response,next)=>{
+
     response.render('nuevo-arma', {
         Titulo:"Nueva arma",
+        csrfToken: request.csrfToken(),
         isLoggedIn: request.session.isLoggedIn == true ? true : false
     });
 }
@@ -24,7 +26,6 @@ exports.get = (request,response,next)=>{
 
     console.log(request.cookies);
     console.log(request.cookies.ultima_arma);
-
 
     Arma.fetchAll()
         .then(([rows, fieldData]) => {

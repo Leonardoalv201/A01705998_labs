@@ -11,6 +11,7 @@
                 <% if (error) {%>
                     <span style="color: red;"><%=error%></span><br>
                 <% }%>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
                 <input type="text" name="usuario" placeholder="Username"> <br> <br>
                 <input type="password" name="password" placeholder="Contraseña"> <br> <br>
                 <input type="submit" value="Ingresar">

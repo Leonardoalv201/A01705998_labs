@@ -7,6 +7,10 @@ var cookieParser = require ('cookie-parser');
 
 const session = require('express-session');
 
+//proteccion a clonacion de la pagina web para extraccion de datos
+const csrf = require('csurf');
+const csrfProtection = csrf();
+
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -31,6 +35,8 @@ app.use(session({
 
 //Para acceder a los recursos de la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(csrfProtection); 
 
 app.use('/agentes', rutasAgentes);
 
