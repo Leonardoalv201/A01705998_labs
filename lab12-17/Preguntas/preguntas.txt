@@ -15,3 +15,8 @@ Preguntas lab 17
 ¿Qué es SQL injection y cómo se puede prevenir?
     Este tipo de ataque ocurren cuando un usuario al registrar un dato, inserta codigo sql para afectar la base de datos, esto se previene utilizando '?' en donde van las variables y 
     despues se le pasa el dato, de esta forma, no toma lo mandado literal como codigo sql, sino mas bien como texto 
+
+
+Pregunta lab 18
+¿Qué otras formas de autentificación existen?
+    

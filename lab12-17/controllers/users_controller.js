@@ -54,6 +54,7 @@ exports.logout = (request, response, next) => {
 exports.getRegister = (request, response, next)=>{
     response.render('register',{
         Titulo: "Registro",
+        csrfToken: request.csrfToken(),
         isLoggedIn: request.session.isLoggedIn == true ? true : false
     });
 }
