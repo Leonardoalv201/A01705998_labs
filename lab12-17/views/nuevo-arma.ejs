@@ -1,15 +1,15 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/navbar.ejs') %>
-
-<form action="nuevo-arma" method="POST">
-    <div class="card">
+<br>
+<form action="nuevo-arma" method="POST" enctype="multipart/form-data">
+    <div class="card bg-dark text-white">
         <div class="card-header">
             Guarda el arma
         </div>
         <div class="card-body">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <input type="text" name="guardar_arma" placeholder="Nombre arma"> <br> <br>
-            <input type="text" name="imagen_arma" placeholder="link imagen"> <br> <br>
+            <input type="file" name="imagen_arma" placeholder="link imagen"> <br> <br>
             <input type="submit" class="btn btn-primary" value="Guardar arma">
         </div>
     </div>

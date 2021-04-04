@@ -19,4 +19,4 @@ Preguntas lab 17
 
 Pregunta lab 18
 ¿Qué otras formas de autentificación existen?
-    
+    Otras posibles opciones de autentificarse en un sistema serian con ping, clave numerica, etc.

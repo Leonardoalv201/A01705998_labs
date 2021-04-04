@@ -1,15 +1,17 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/navbar.ejs') %>
 
-<main>
+<main class="container row aline-items-center">
     <h1>Agentes</h1>
-    <% for (let agente of lista_agentes) { %>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="<%= agente.imagen %>"" alt="Card image cap">
-            <div class="card-body">
-                <p class="card-text"><%= agente.agente %></p>
+    <div class="card-columns" style="max-width: 18rem;">
+        <% for (let agente of lista_agentes) { %>
+            <div class="card">
+                <img class="card-img-top" src="<%= agente.imagen %>"" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><%= agente.agente %></p>
+                </div>
             </div>
-        </div>
-    <% } %>
+        <% } %>
+    </div>
 </main>
 

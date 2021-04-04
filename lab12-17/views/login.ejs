@@ -1,20 +1,20 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/navbar.ejs') %>
-
+<br>
 <main class="row align-items-center">
     <form action="/users/login" method="POST">
-        <div class="card text-center" >
+        <div class="card text-center bg-dark text-white" >
             <div class="card-header">
                 Registro de usuario
             </div>
-            <div class="card-body">
+            <div class="card-body">    
                 <% if (error) {%>
                     <span style="color: red;"><%=error%></span><br>
                 <% }%>
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
                 <input type="text" name="usuario" placeholder="Username"> <br> <br>
                 <input type="password" name="password" placeholder="Contraseña"> <br> <br>
-                <input type="submit" value="Ingresar">
+                <input type="submit" value="Ingresar">   
             </div>
         </div>
     </form>

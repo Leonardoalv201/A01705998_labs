@@ -10,7 +10,12 @@ exports.getNuevoAgente = (request,response,next)=>{
 }
 
 exports.postNuevoAgente = (request,response,next)=>{
-    const nuevo_agente=new Agente(request.body.guardar_agente, request.body.imagen_agente)
+    const image=request.file;
+    if(!image){
+        console.error('Error al subir la imagen');
+        return response.status(422).redirect('/');
+    }
+    const nuevo_agente=new Agente(request.body.guardar_agente, image.filename)
     nuevo_agente.save()
         .then(() => {
             response.setHeader('Set-Cookie', ['ultimo_agente='+ nuevo_agente.agente + '; HttpOnly']);

@@ -16,5 +16,4 @@ router.get('/:arma_id', isAuth, armasController.getArma);
 
 router.use('/', isAuth, armasController.get);
 
-
 module.exports = router;

@@ -1,16 +1,18 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/navbar.ejs') %>
 
-<main>
+<main class="container row aline-items-center">
     <h1>Armas</h1>
-    <% for (let arma of lista_armas) { %>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="<%= arma.imagen %>"" alt="Card image cap">
-            <div class="card-body">
-                <p class="card-text"><%= arma.arma %></p>
+    <div class="card-columns" style="max-width: 18rem;">
+        <% for (let arma of lista_armas) { %>
+            <div class="card">
+                <img class="card-img-top" src="<%= arma.imagen %>"" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><%= arma.arma %></p>
+                </div>
             </div>
-        </div>
-    <% } %>
+        <% } %>
+    </div>
 </main>
 
 

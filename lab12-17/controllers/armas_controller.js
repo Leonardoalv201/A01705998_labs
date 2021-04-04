@@ -10,7 +10,12 @@ exports.getNuevoArma = (request,response,next)=>{
 }
 
 exports.postNuevoArma = (request,response,next)=>{
-    const nuevo_arma=new Arma(request.body.guardar_arma, request.body.imagen_arma)
+    const image=request.file;
+    if(!image){
+        console.error('Error al subir la imagen');
+        return response.status(422).redirect('/');
+    }
+    const nuevo_arma=new Arma(request.body.guardar_arma, image.filename)
     nuevo_arma.save()
         .then(() => {
             response.setHeader('Set-Cookie', ['ultima_arma='+ nuevo_arma.arma + '; HttpOnly']);
