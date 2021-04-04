@@ -3,8 +3,11 @@
 
 <main class="container row aline-items-center">
     <h1>Agentes</h1>
-    <div class="card-columns" style="max-width: 18rem;">
+    <input type="hidden" id="_csrf" name="_csrf" value="<%= csrfToken %>" >
+    <input type="search" name="buscar" id="buscar" onkeyup="buscar()" placeholder="Buscar">
+    <div class="card-columns" style="max-width: 18rem;" id="resultados">
         <% for (let agente of lista_agentes) { %>
+            <br>
             <div class="card">
                 <img class="card-img-top" src="<%= agente.imagen %>"" alt="Card image cap">
                 <div class="card-body">
@@ -15,3 +18,40 @@
     </div>
 </main>
 
+<script>
+    function buscar(){
+        const valor_busqueda = document.getElementById('buscar').value;
+        //El token de protección CSRF
+        const csrf = document.getElementById('_csrf').value;
+
+        let data= {valor_busqueda: valor_busqueda};
+        //función que manda la petición asíncrona
+        fetch('/agentes/buscar', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'csrf-token': csrf,
+                'Content-Type': 'application/json'
+            }
+        }).then(result => {
+            return result.json(); //Regresa otra promesa
+        }).then(data => {
+            //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+            //...
+            console.log(data)
+            let html = '';
+            for (let agente of data){
+                html += '<br>'+
+                        '<div class="card">'+
+                            '<img class="card-img-top" src="' + agente.imagen + '" alt="Card image cap">'+
+                            '<div class="card-body">'+
+                                '<p class="card-text">' + agente.nombre + '</p>'+
+                            '</div>' +
+                        '</div>';
+            }
+            document.getElementById("resultados").innerHTML = html;
+        }).catch(err => {
+            console.log(err);
+        });
+    };
+</script>

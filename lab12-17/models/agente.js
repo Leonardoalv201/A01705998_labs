@@ -27,4 +27,8 @@ module.exports = class Agente {
         return db.execute('SELECT * FROM agentes where id=?',[id]);  
     }
 
+    static fetchByName(nombre){
+        return db.execute("SELECT * FROM agentes where nombre like ?",["'%" + nombre + "%'"]);
+    }
+
 }

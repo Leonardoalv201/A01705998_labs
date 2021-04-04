@@ -24,6 +24,7 @@ const rutasInicio = require('./routes/inicio');
 
 //Acceder a los datos de las formas
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 const multer = require('multer');
 
@@ -31,7 +32,7 @@ const multer = require('multer');
 const fileStorage = multer.diskStorage({
     destination: (request, file, callback) => {
         //'uploads': Es el directorio del servidor donde se subirán los archivos 
-        callback(null, 'uploades');
+        callback(null, 'uploads');
     },
     filename: (request, file, callback) => {
         //aquí configuramos el nombre que queremos que tenga el archivo en el servidor, 
@@ -45,19 +46,19 @@ const fileStorage = multer.diskStorage({
 //pero hay diferentes opciones si se quieren subir varios archivos. 
 //'archivo' es el nombre del input tipo file de la forma
 
-//app.use(multer(
-    //{ storage: fileStorage }
-    //).single('imagen_agente')); 
-
 app.use(multer(
     { storage: fileStorage }
-    ).single('imagen_arma')); 
+    ).single('imagen_agente')); 
+
+//app.use(multer(
+    //{ storage: fileStorage }
+    //).single('imagen_arma')); 
 
 //Para acceder a los recursos de la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Para acceder a los recursos de la carpeta uploades
-app.use(express.static(path.join(__dirname, 'uploades')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 //Acceder a los datos de las cookies
 app.use(cookieParser());

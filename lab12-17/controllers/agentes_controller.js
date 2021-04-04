@@ -27,33 +27,6 @@ exports.postNuevoAgente = (request,response,next)=>{
     
 }
 
-exports.get = (request,response,next)=>{
-    
-    console.log(request.cookies);
-    console.log(request.cookies.ultimo_agente);
-    
-    Agente.fetchAll()
-        .then(([rows, fieldData]) => {
-            const agentes = [];
-            for (let agent of rows){
-                agentes.push({
-                    agente: agent.nombre,
-                    imagen: agent.imagen
-                });
-            }
-            console.log(agentes);
-            response.render('agentes', {
-                lista_agentes: agentes,
-                Titulo:"Agentes",
-                isLoggedIn: request.session.isLoggedIn == true ? true : false
-            });
-        })
-        .catch(err => {
-            console.log(err);
-        });
-};
-
-
 exports.getAgente= (request,response,next)=>{
 
     const id = request.params.agente_id;
@@ -77,3 +50,44 @@ exports.getAgente= (request,response,next)=>{
             console.log(err);
         });
 }
+
+exports.postBuscar=(request,response,next)=>{
+    console.log(request.body);
+    const name = request.body.valor_busqueda;
+    Agente.fetchByName(name)
+        .then(([rows, fieldData]) => {
+            response.status(200).json(rows);   
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+
+exports.get = (request,response,next)=>{
+    
+    console.log(request.cookies);
+    console.log(request.cookies.ultimo_agente);
+    
+    Agente.fetchAll()
+        .then(([rows, fieldData]) => {
+            const agentes = [];
+            for (let agent of rows){
+                agentes.push({
+                    agente: agent.nombre,
+                    imagen: agent.imagen
+                });
+            }
+            console.log(agentes);
+            response.render('agentes', {
+                lista_agentes: agentes,
+                Titulo:"Agentes",
+                csrfToken: request.csrfToken(),
+                isLoggedIn: request.session.isLoggedIn == true ? true : false
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+
+

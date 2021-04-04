@@ -14,6 +14,8 @@ router.post('/nuevo-agente', isAuth, agentesController.postNuevoAgente);
 
 router.get('/:agente_id', isAuth, agentesController.getAgente);
 
+router.post('/buscar', isAuth, agentesController.postBuscar);
+
 router.get('/', isAuth, agentesController.get);
 
 module.exports = router;
