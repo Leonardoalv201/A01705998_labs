@@ -5,16 +5,18 @@
     <h1>Agentes</h1>
     <input type="hidden" id="_csrf" name="_csrf" value="<%= csrfToken %>" >
     <input type="search" name="buscar" id="buscar" onkeyup="buscar()" placeholder="Buscar">
-    <div class="card-columns" style="max-width: 18rem;" id="resultados">
-        <% for (let agente of lista_agentes) { %>
-            <br>
-            <div class="card">
-                <img class="card-img-top" src="<%= agente.imagen %>"" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text"><%= agente.agente %></p>
+    <div name="resultados" id="resultados">
+        <div class="card-columns" style="max-width: 18rem;">
+            <% for (let agente of lista_agentes) { %>
+                <br>
+                <div class="card">
+                    <img class="card-img-top" src="<%= agente.imagen %>"" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text"><%= agente.agente %></p>
+                    </div>
                 </div>
-            </div>
-        <% } %>
+            <% } %>
+        </div>
     </div>
 </main>
 
@@ -39,7 +41,7 @@
             //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
             //...
             console.log(data)
-            let html = '';
+            let html = '<div class="card-columns" style="max-width: 18rem;">';
             for (let agente of data){
                 html += '<br>'+
                         '<div class="card">'+
@@ -49,6 +51,7 @@
                             '</div>' +
                         '</div>';
             }
+            html += '</div>'
             document.getElementById("resultados").innerHTML = html;
         }).catch(err => {
             console.log(err);

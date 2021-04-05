@@ -28,7 +28,7 @@ module.exports = class Agente {
     }
 
     static fetchByName(nombre){
-        return db.execute("SELECT * FROM agentes where nombre like ?",["'%" + nombre + "%'"]);
+        return db.execute("SELECT * FROM agentes where nombre like ?",["%" + nombre + "%"]);
     }
 
 }
